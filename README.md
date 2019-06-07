@@ -4,12 +4,12 @@ Springboot simple demo
 * JDK 1.8+
 * Maven 3.5+
 
-##Running the application locally
+## Running the application locally
 ```
 mvn spring-boot:run
 ```
 
-##Api Documentation
+## Api Documentation
 ```
 localhost:8091/swagger-ui.html
 ```
