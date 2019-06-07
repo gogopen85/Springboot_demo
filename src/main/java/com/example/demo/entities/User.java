@@ -8,10 +8,12 @@ import java.util.List;
 @Entity
 @Table(name="\"user\"")
 public class User {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
     private Long id;
-    private String username;
+    private String userId;
     private String name;
 
     @JsonIgnore
@@ -19,8 +21,8 @@ public class User {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Role> roles;
 
-    public User(String username, String name, String password, List<Role> roles) {
-        this.username = username;
+    public User(String userId, String name, String password, List<Role> roles) {
+        this.userId = userId;
         this.name = name;
         this.password = password;
         this.roles = roles;
@@ -29,12 +31,28 @@ public class User {
     public User() {
     }
 
-    public String getUsername() {
-        return username;
+    public Long getId() {
+        return id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -51,17 +69,5 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

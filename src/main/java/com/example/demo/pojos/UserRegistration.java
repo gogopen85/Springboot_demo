@@ -1,7 +1,7 @@
 package com.example.demo.pojos;
 
 public class UserRegistration {
-    private String username;
+    private String userId;
     private String password;
     private String passwordConfirmation;
     private String name;
@@ -9,20 +9,16 @@ public class UserRegistration {
     public UserRegistration() {
     }
 
-    public UserRegistration(String username, String password, String passwordConfirmation, String name) {
-        this.username = username;
+    public UserRegistration(String userId, String password, String passwordConfirmation, String name) {
+        this.userId = userId;
         this.password = password;
         this.passwordConfirmation = passwordConfirmation;
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUserId() { return userId; }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    public void setUserId(String userId) { this.userId = userId; }
 
     public String getPassword() {
         return password;
