@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private Long id;
-    private String userId;
+    private String username;
     private String name;
 
     @JsonIgnore
@@ -21,8 +21,8 @@ public class User {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Role> roles;
 
-    public User(String userId, String name, String password, List<Role> roles) {
-        this.userId = userId;
+    public User(String username, String name, String password, List<Role> roles) {
+        this.username = username;
         this.name = name;
         this.password = password;
         this.roles = roles;
@@ -39,12 +39,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getName() {
