@@ -4,10 +4,13 @@ import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,5 +32,9 @@ public class UserService {
 
     public Optional<User> getUser(String username){
         return userRepository.findByUsername(username);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

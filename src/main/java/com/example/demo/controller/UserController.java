@@ -6,12 +6,15 @@ import com.example.demo.entities.User;
 import com.example.demo.pojos.UserRegistration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.service.UserService;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 @RestController
@@ -38,5 +41,10 @@ public class UserController {
         userService.save(new User(userRegistration.getUsername(), userRegistration.getName(),userRegistration.getPassword(), Arrays.asList(new Role("USER"), new Role("ACTUATOR"))));
 
         return res.resSuccess("가입완료");
+    }
+
+    @GetMapping(value = "/users")
+    public List<User> users(){
+        return userService.getAllUsers();
     }
 }
