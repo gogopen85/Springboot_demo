@@ -13,3 +13,8 @@ mvn spring-boot:run
 ```
 localhost:8091/swagger-ui.html
 ```
+
+## Docker
+```
+docker pull gogopen85/springbootdemo:v0.1
+```
