@@ -13,7 +13,7 @@ import java.util.Map;
  * MapperSelector
  * 멀티 database 사용 시 mapper 객체를 선택해 준다.
  *
- * 참고) ApplicationReadyEvent 메소드를 구현해서 초기화 한다. (NifiApplicationListener.readyAfterStartup 참조)
+ * 참고) ApplicationReadyEvent 메소드를 구현해서 초기화 한다. (ApplicationListener.readyAfterStartup 참조)
  *      즉, SpringBoot 모두 초기화 된 상태에서 접속할 DB정보를 초기화 한다.
  */
 @Component
