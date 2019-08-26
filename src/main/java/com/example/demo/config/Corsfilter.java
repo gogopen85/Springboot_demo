@@ -14,8 +14,7 @@ import java.io.IOException;
 public class Corsfilter implements Filter {
 
     @Override
-    public void init(FilterConfig fc) throws ServletException {
-    }
+    public void init(FilterConfig fc) throws ServletException {}
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp,
@@ -32,10 +31,8 @@ public class Corsfilter implements Filter {
         } else {
             chain.doFilter(req, resp);
         }
-
     }
 
     @Override
-    public void destroy() {
-    }
+    public void destroy() {}
 }
